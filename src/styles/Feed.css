@@ -37,16 +37,12 @@
 }
 
 .feed__input > form > button {
-    /* padding: 0 20px;
-    background-color: lightgray;
-    border: 1px solid gray;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600; */
     display: none;
 }
 
 .feed__inputOptions {
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
+    margin-top: 15px;
 }

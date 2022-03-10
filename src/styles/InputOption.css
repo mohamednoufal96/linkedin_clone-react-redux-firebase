@@ -1,5 +1,14 @@
 .inputOption {
     display: flex;
+    align-items: center;
+    padding: 10px;
+    color: gray;
+    cursor: pointer;
+}
+
+.inputOption:hover {
+    background-color: lightgray;
+    border-radius: 10px;
 }
 
 .inputOption__icon {
@@ -8,5 +17,4 @@
 
 .inputOption__title {
     font-size: 13px;
-    color: lightgray;
 }
