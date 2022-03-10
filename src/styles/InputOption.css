@@ -1,0 +1,12 @@
+.inputOption {
+    display: flex;
+}
+
+.inputOption__icon {
+    margin-right: 10px;
+}
+
+.inputOption__title {
+    font-size: 13px;
+    color: lightgray;
+}
