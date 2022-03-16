@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar } from "@mui/material";
 import "../styles/Sidebar.css";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/userSlice";
 
 function Sidebar() {
+    const user = useSelector(selectUser);
+
+    useEffect(() => {
+        console.log("inside Login.js", user);
+    }, []);
+
     const sidebar = (topic) => (
         <div className="sidebar__recentItem">
             <span className="sidebar__hash">#</span>
@@ -17,12 +25,11 @@ function Sidebar() {
                     alt="cover pic"
                 />
 
-                <Avatar
-                    className="sidebar__avatar"
-                    src="https://media-exp1.licdn.com/dms/image/C5103AQF96ES8oDkyUA/profile-displayphoto-shrink_200_200/0/1555241079252?e=1652313600&v=beta&t=bYvc4hdCmqx7xIcDKbR689WahkU0rWve4gnZQeJyCBA"
-                />
-                <h2>Mohamed Noufal</h2>
-                <h4>noufal@gmail.com</h4>
+                <Avatar className="sidebar__avatar" src={user.photoUrl}>
+                    {user.email[0]}
+                </Avatar>
+                <h2> {user.displayName} </h2>
+                <h4> {user.email} </h4>
             </div>
             <div className="sidebar__stats">
                 <div className="sidebar__stat">

@@ -52,6 +52,7 @@
 
 .sidebar__stat {
     display: flex;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
 
@@ -62,6 +63,7 @@
 }
 
 .sidebar__statNumber {
+    margin-left: 10px;
     font-weight: bold;
     color: #1993e5 !important;
 }

@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Post.css";
 import InputOption from "./InputOption";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
@@ -11,7 +11,9 @@ function Post({ name, description, message, photoUrl }) {
     return (
         <div className="post">
             <div className="post__header">
-                <Avatar src="" className="post__avatar" />
+                <Avatar src={photoUrl} className="post__avatar">
+                    {name[0]}
+                </Avatar>
                 <div className="post__info">
                     <h2> {name}</h2>
                     <p>{description}</p>
