@@ -7,6 +7,7 @@ import { login, logout, selectUser } from "./features/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Login from "./components/Login";
 import { auth } from "./firebase";
+import Widgets from "./components/Widgets";
 
 function App() {
     const dispatch = useDispatch();
@@ -15,14 +16,15 @@ function App() {
         auth.onAuthStateChanged((userAuth) => {
             if (userAuth) {
                 //    the user is logged in
+                debugger;
+                console.log("App component :", userAuth);
 
-                console.log(userAuth);
                 dispatch(
                     login({
                         email: userAuth.email,
                         uid: userAuth.uid,
-                        displayName: userAuth.dispayName,
-                        photoUrl: userAuth.photoUrl,
+                        displayName: userAuth.displayName,
+                        photoUrl: userAuth.photoURL,
                     })
                 );
             } else {
@@ -43,7 +45,7 @@ function App() {
                 <div className="app__body">
                     <Sidebar />
                     <Feed />
-                    {/* Widgets */}
+                    <Widgets />
                 </div>
             )}
         </div>

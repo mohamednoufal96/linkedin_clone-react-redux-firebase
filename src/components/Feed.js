@@ -9,6 +9,7 @@ import Post from "./Post";
 import { db, timeStamp } from "../firebase";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
+import FlipMove from "react-flip-move";
 import "../styles/Feed.css";
 
 function Feed() {
@@ -63,9 +64,11 @@ function Feed() {
                     <InputOption Icon={CalendarViewDayIcon} title="Write article" color="#1e9c5d" />
                 </div>
             </div>
-            {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
-                <Post key={id} name={name} description={description} message={message} photoUrl={photoUrl} />
-            ))}
+            <FlipMove>
+                {posts.map(({ id, data: { name, description, message, photoUrl } }) => (
+                    <Post key={id} name={name} description={description} message={message} photoUrl={photoUrl} />
+                ))}
+            </FlipMove>
         </div>
     );
 }

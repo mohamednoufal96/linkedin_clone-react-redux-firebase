@@ -3,7 +3,7 @@
     top: 88px;
     flex: 0.2;
     border-radius: 10px;
-    /* height: fit-content; */
+    height: fit-content;
 }
 
 .sidebar__top {

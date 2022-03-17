@@ -27,7 +27,6 @@ function Header() {
                     alt="logo"
                 />
                 <div className="header__search">
-                    {/* search icon */}
                     <SearchIcon />
                     <input type="text" />
                 </div>

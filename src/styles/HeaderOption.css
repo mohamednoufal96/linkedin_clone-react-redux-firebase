@@ -7,6 +7,10 @@
     color: gray;
 }
 
+.headerOption > .MuiAvatar-root:hover {
+    transform: scale(1.2);
+}
+
 .headerOption:hover {
     color: black;
 }

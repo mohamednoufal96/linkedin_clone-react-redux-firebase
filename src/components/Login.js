@@ -32,13 +32,6 @@ function Login() {
                                 photoURL: profilePic,
                             })
                         );
-                        const c_user = {
-                            email: userAuth.user.email,
-                            uid: userAuth.user.uid,
-                            displayName: name,
-                            photoURL: profilePic,
-                        };
-                        console.log("user registered", c_user);
                     });
             })
             .catch((error) => {
@@ -51,8 +44,6 @@ function Login() {
 
         auth.signInWithEmailAndPassword(email, password)
             .then((userAuth) => {
-                debugger;
-                console.log(userAuth);
                 dispatch(
                     login({
                         email: userAuth.user.email,
@@ -61,13 +52,6 @@ function Login() {
                         photoURL: userAuth.user.photoUrl,
                     })
                 );
-                const c_user = {
-                    email: userAuth.user.email,
-                    uid: userAuth.user.uid,
-                    displayName: userAuth.user.displayName,
-                    photoURL: userAuth.user.photoUrl,
-                };
-                console.log("user logged in", c_user);
             })
             .catch((error) => alert(error));
     };
